@@ -70,13 +70,17 @@ export default {
 
   css: ['@/assets/css/reset.css'],
 
+  styleResources: {
+    scss: ['./assets/scss/*.scss'],
+  },
+
   plugins: [],
 
   components: [{ path: '~/components' }, { path: '~/components/reusable' }],
 
   buildModules: ['@nuxtjs/eslint-module'],
 
-  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/sitemap', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/sitemap', '@nuxtjs/i18n', '@nuxtjs/style-resources'],
 
   // https://i18n.nuxtjs.org/basic-usage
   i18n: {
