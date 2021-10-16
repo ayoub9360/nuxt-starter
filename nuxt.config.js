@@ -1,5 +1,6 @@
 export default {
   target: 'static', // 'server' or 'static'
+
   head() {
     const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
     return {
@@ -38,8 +39,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content:
-            'https://f.hellowork.com/blogdumoderateur/2013/09/google-logo.png',
+          content: 'https://f.hellowork.com/blogdumoderateur/2013/09/google-logo.png',
         },
         { hid: 'og:title', property: 'og:title', content: 'Site_title' },
         {
@@ -76,12 +76,7 @@ export default {
 
   buildModules: ['@nuxtjs/eslint-module'],
 
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxt/content',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/sitemap', '@nuxtjs/i18n'],
 
   // https://i18n.nuxtjs.org/basic-usage
   i18n: {
