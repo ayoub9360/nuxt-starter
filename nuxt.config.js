@@ -32,6 +32,10 @@ export default {
     ]
   },
 
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000/'
+  },
+
   css: [
     '@/assets/css/reset.css',
   ],
@@ -39,6 +43,7 @@ export default {
   plugins: [],
 
   components: [
+    { path: '~/components' },
     { path: '~/components/reusable' },
   ],
 
@@ -49,7 +54,17 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxt/content',
+    '@nuxtjs/sitemap',
   ],
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: `https://${process.env.BASE_URL}`,
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    trailingSlash: true,
+    exclude: []
+  },
 
   axios: {},
 
