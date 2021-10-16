@@ -12,6 +12,10 @@
 ## How to install ?
 
 ```bash
+# install your own git repository
+$ rm -rf .git
+$ git init
+
 # install dependencies
 $ npm install
 
