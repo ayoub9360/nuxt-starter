@@ -1,17 +1,13 @@
 export default {
   target: 'static', // 'server' or 'static'
 
-  loading: {
-    color: '#4994FB',
-  },
-
   head() {
-    // const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
     return {
       title: 'Site_name',
       noscript: [{ innerHTML: 'This website requires JavaScript.' }],
       htmlAttrs: {
-        // ...i18nHead.htmlAttrs,
+        ...i18nHead.htmlAttrs,
       },
       meta: [
         { charset: 'utf-8' },
@@ -57,12 +53,12 @@ export default {
           content: 'Site_description',
         },
         { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
-        // ...i18nHead.meta,
+        ...i18nHead.meta,
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'manifest', href: '/site.webmanifest' },
-        // ...i18nHead.link,
+        ...i18nHead.link,
       ],
     }
   },
@@ -72,31 +68,22 @@ export default {
     BASE_URL: process.env.BASE_URL || 'http://localhost:3000/',
   },
 
-  css: ['~assets/scss/style.scss'],
+  css: ['@/assets/css/reset.css'],
 
   styleResources: {
-    scss: ['./assets/scss/variables.scss'],
+    scss: ['./assets/scss/*.scss'],
   },
 
   plugins: [],
 
   components: [{ path: '~/components' }, { path: '~/components/reusable' }],
 
-  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/google-fonts'],
+  buildModules: ['@nuxtjs/eslint-module'],
 
-  googleFonts: {
-    download: true,
-    stylePath: './assets/scss/google-font.css',
-    families: {
-      Roboto: true,
-    },
-  },
-
-  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/sitemap', '@nuxtjs/i18n', '@nuxtjs/style-resources'],
 
   // https://i18n.nuxtjs.org/basic-usage
   i18n: {
-    strategy: 'prefix_and_default',
     locales: [
       { code: 'en', iso: 'en-US' },
       { code: 'fr', iso: 'fr-FR' },
@@ -123,9 +110,7 @@ export default {
   axios: {},
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {
-    apiPrefix: 'content-api',
-  },
+  content: {},
 
   build: {},
 }
