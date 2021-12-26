@@ -1,0 +1,96 @@
+h1 {
+  color: $gray-ultradark;
+  font-family: $font-default;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 110%;
+}
+
+h2 {
+  color: $gray-ultradark;
+  font-family: $font-default;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 120%;
+}
+
+h3 {
+  color: $gray-ultradark;
+  font-family: $font-default;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 44px;
+}
+
+h4 {
+  color: $gray-ultradark;
+  font-family: $font-default;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+}
+
+p, li, span, label, button{
+  font-family: $font-default;
+  color: $gray-dark;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+input {
+  line-height: 140%;
+  border: 1px solid #e2e8f0;
+  padding: 5px 10px;
+  border-radius: 0.25rem;
+  color: rgba(74, 85, 104, 1);
+  font-family: $font-default;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  &::placeholder {
+    font-size: 14px;
+    color:#bfc3c9;
+    font-family: $font-default;
+  }
+}
+
+.link, a{
+  font-family: $font-default;
+  font-size: 18px;
+  line-height: 140%;
+  font-weight: 200;
+}
+
+.link, .link-container a, a {
+  font-weight: 500;
+  line-height: 140%;
+  cursor: pointer;
+
+  &:not(.no-hover):hover {
+    color: $gray-ultradark;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  h1 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 39px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  h4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  p {
+    font-size: 16px;
+    &.large {
+      font-size: 18px;
+    }
+  }
+}
